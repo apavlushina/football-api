@@ -9,14 +9,14 @@ router.get("/player", (request, response, next) => {
     .catch(err => next(err));
 });
 
-router.post("/team", (req, res, next) => {
-  Team.create(req.body)
+router.post("/player", (req, res, next) => {
+  Player.create(req.body)
     .then(name => res.json(name))
     .catch(err => next(err));
 });
 
-router.get("/team/:teamId", (req, res, next) => {
-  Team.findByPk(req.params.teamId)
+router.get("/player/:playerId", (req, res, next) => {
+  Player.findByPk(req.params.playerId)
     .then(name => {
       if (!name) {
         res.status(404).end();
