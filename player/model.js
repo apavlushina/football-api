@@ -10,4 +10,7 @@ const Player = db.define("player", {
   }
 });
 
+const Team = require("../team/model");
+Player.belongsTo(Team);
+
 module.exports = Player;
